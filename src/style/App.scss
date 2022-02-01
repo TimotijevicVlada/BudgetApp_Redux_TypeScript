@@ -13,7 +13,6 @@
     .header {
         width: 33.33%;
         padding: 0px 20px;
-        border: 1px solid white;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -39,7 +38,7 @@
             justify-content: space-evenly;
             font-size: 25px;
             .header_income {
-                color: rgb(15, 199, 15);
+                color: rgb(10, 190, 100);
                 div {
                     margin-bottom: 20px;
                 }
@@ -54,12 +53,82 @@
     }
     .income {
         width: 33.33%;
-        padding: 0px 20px;
-        border: 1px solid white;
+        padding: 0px 40px;
+        .income_form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid gray;
+                margin-bottom: 20px;
+                font-size: 18px;
+                padding: 10px 0px;
+                color: white;
+                &:focus {
+                    outline: none;
+                    border-bottom: 2px solid rgb(10, 190, 100);
+                }
+            }
+            .btn {
+                button {
+                    background-color: rgb(10, 190, 100);
+                    padding: 5px 15px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgb(9, 167, 88);
+                    }
+                }
+            }
+        }
+        .income_history {
+            h2 {
+                font-weight: 200;
+            }
+        }
     }
     .expense {
         width: 33.33%;
-        padding: 0px 20px;
-        border: 1px solid white;
+        padding: 0px 40px;
+        .expense_form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid gray;
+                margin-bottom: 20px;
+                font-size: 18px;
+                padding: 10px 0px;
+                color: white;
+                &:focus {
+                    outline: none;
+                    border-bottom: 2px solid orangered;
+                }
+            }
+            .btn {
+                button {
+                    background-color: orangered;
+                    padding: 5px 15px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: orangered;
+                    }
+                }
+            }
+        }
+        .expense_history {
+            h2 {
+                font-weight: 200;
+            }
+        }
     }
 }

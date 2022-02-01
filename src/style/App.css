@@ -19,7 +19,6 @@
 .App .header {
   width: 33.33%;
   padding: 0px 20px;
-  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +63,7 @@
 }
 
 .App .header .income_expenses .header_income {
-  color: #0fc70f;
+  color: #0abe64;
 }
 
 .App .header .income_expenses .header_income div {
@@ -81,13 +80,97 @@
 
 .App .income {
   width: 33.33%;
-  padding: 0px 20px;
-  border: 1px solid white;
+  padding: 0px 40px;
+}
+
+.App .income .income_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.App .income .income_form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin-bottom: 20px;
+  font-size: 18px;
+  padding: 10px 0px;
+  color: white;
+}
+
+.App .income .income_form input:focus {
+  outline: none;
+  border-bottom: 2px solid #0abe64;
+}
+
+.App .income .income_form .btn button {
+  background-color: #0abe64;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.App .income .income_form .btn button:hover {
+  background-color: #09a758;
+}
+
+.App .income .income_history h2 {
+  font-weight: 200;
 }
 
 .App .expense {
   width: 33.33%;
-  padding: 0px 20px;
-  border: 1px solid white;
+  padding: 0px 40px;
+}
+
+.App .expense .expense_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.App .expense .expense_form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin-bottom: 20px;
+  font-size: 18px;
+  padding: 10px 0px;
+  color: white;
+}
+
+.App .expense .expense_form input:focus {
+  outline: none;
+  border-bottom: 2px solid orangered;
+}
+
+.App .expense .expense_form .btn button {
+  background-color: orangered;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.App .expense .expense_form .btn button:hover {
+  background-color: orangered;
+}
+
+.App .expense .expense_history h2 {
+  font-weight: 200;
 }
 /*# sourceMappingURL=App.css.map */

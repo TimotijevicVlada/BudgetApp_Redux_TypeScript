@@ -1,9 +1,12 @@
 import React from 'react';
+import IncomeForm from './IncomeForm';
+import IncomeHistory from './IncomeHistory';
 
 const Income = () => {
   return (
       <div className='income'>
-          Hello from INCOME!
+          <IncomeForm />
+          <IncomeHistory />
       </div>
   )
 };
