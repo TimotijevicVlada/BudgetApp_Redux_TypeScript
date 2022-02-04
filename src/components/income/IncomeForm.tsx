@@ -1,32 +1,54 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import { validate } from '../../validation/IncomeValidation';
 
 const IncomeForm = () => {
 
     const dispatch = useDispatch();
-    const formValue = useSelector((state: any) => state.incomeForm);
+    const income = useSelector((state: any) => state.income.income);
 
-    console.log(formValue);
+    console.log(income);
 
-    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch({ type: "UPDATE_NAME_VALUE", payload: e.target.value });
-    }
+    //Formik library
+    const formik = useFormik({
+        initialValues: {
+            id: 0,
+            name: "",
+            total: 0,
+            date: ""
+        },
+        validate,
+        onSubmit: (values) => {
+            const newIncome = {
+                id: Math.floor(Math.random() * 1000000),
+                name: values.name,
+                total: values.total,
+                date: new Date()
+            }
+            dispatch({ type: "ADD_INCOME", payload: newIncome });
+        }
+    });
 
-    const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch({ type: "UPDATE_PRICE_VALUE", payload: e.target.value });
-    }
+    useEffect(() => {
+        dispatch({ type: "COUNT_TOTAL_INCOME" })
+    }, [income])
 
     return (
-        <form className='income_form'>
+        <form onSubmit={formik.handleSubmit} className='income_form'>
             <input
-                onChange={(e) => handleNameChange(e)}
-                value={formValue.name}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.name}
+                name="name"
                 type="text"
                 placeholder='Add income...'
             />
             <input
-                onChange={(e) => handlePriceChange(e)}
-                value={formValue.price}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.total}
+                name="total"
                 type="text"
                 placeholder='$0'
             />
