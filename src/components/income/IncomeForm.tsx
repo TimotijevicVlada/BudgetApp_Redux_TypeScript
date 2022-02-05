@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { validate } from '../../validation/IncomeValidation';
-import { IncomeProps } from '../../state/reducers/IncomeReducer';
+import { validate } from '../../validation/Validation';
 
 const IncomeForm = () => {
 
     const dispatch = useDispatch();
     const income = useSelector((state: any) => state.income.income);
-
 
     //Formik library
     const formik = useFormik({
@@ -20,7 +18,7 @@ const IncomeForm = () => {
         },
         validate,
         onSubmit: (values) => {
-            const newIncome: IncomeProps = {
+            const newIncome = {
                 id: Math.floor(Math.random() * 1000000),
                 name: values.name,
                 total: values.total,
@@ -44,6 +42,9 @@ const IncomeForm = () => {
                 type="text"
                 placeholder='Add income...'
             />
+            {formik.touched.name && formik.errors.name && (
+                <div className="error">{formik.errors.name}</div>
+            )}
             <input
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -52,6 +53,9 @@ const IncomeForm = () => {
                 type="number"
                 placeholder='$0'
             />
+            {formik.touched.total && formik.errors.total && (
+                <div className="error">{formik.errors.total}</div>
+            )}
             <div className='btn'>
                 <button type='submit'>Submit</button>
             </div>

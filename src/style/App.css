@@ -98,7 +98,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid gray;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 18px;
   padding: 10px 0px;
   color: white;
@@ -109,12 +109,17 @@
   border-bottom: 2px solid #0abe64;
 }
 
+.App .income .income_form .error {
+  color: orangered;
+}
+
 .App .income .income_form .btn button {
   background-color: #0abe64;
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
   color: white;
+  margin-top: 20px;
   cursor: pointer;
 }
 
@@ -186,7 +191,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid gray;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 18px;
   padding: 10px 0px;
   color: white;
@@ -197,11 +202,16 @@
   border-bottom: 2px solid orangered;
 }
 
+.App .expense .expense_form .error {
+  color: orangered;
+}
+
 .App .expense .expense_form .btn button {
   background-color: orangered;
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
+  margin-top: 20px;
   color: white;
   cursor: pointer;
 }
@@ -210,7 +220,47 @@
   background-color: orangered;
 }
 
+.App .expense .expense_history {
+  color: white;
+}
+
 .App .expense .expense_history h2 {
   font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.App .expense .expense_history .expense_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.App .expense .expense_history .expense_item .expense_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: orangered;
+  width: 90%;
+  padding: 5px 10px;
+}
+
+.App .expense .expense_history .expense_item .fas {
+  font-size: 22px;
+}
+
+.App .expense .expense_history .expense_item .fas:hover {
+  color: orangered;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */
