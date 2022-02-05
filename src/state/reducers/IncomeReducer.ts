@@ -5,13 +5,13 @@ export type IncomeProps = {
     date: string
 }
 
-type IncomeState = {
+export type IncomeState = {
     income: IncomeProps[]
     totalIncome: number
 }
 type ActionProps = {
-    type: "ADD_INCOME" | "COUNT_TOTAL_INCOME"
-    payload: string | number
+    type: "ADD_INCOME" | "COUNT_TOTAL_INCOME" | "DELETE_INCOME"
+    payload: IncomeProps
 }
 
 const INITIAL_STATE = {
@@ -29,13 +29,17 @@ const IncomeReducer = (state: IncomeState = INITIAL_STATE, action: ActionProps) 
             }
         case "COUNT_TOTAL_INCOME":
             const countTotal = state.income.reduce((acc, value) => {
-                console.log(acc);
-                console.log(value);
                 return acc + value.total;
             }, 0)
             return {
                 ...state,
                 totalIncome: countTotal
+            }
+        case "DELETE_INCOME":
+            const deleted = state.income.filter(item => item.id !== action.payload.id);
+            return {
+                ...state,
+                income: deleted
             }
         default:
             return state;

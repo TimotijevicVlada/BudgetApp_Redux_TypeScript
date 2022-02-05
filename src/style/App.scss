@@ -1,134 +1,157 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
 }
 .App {
-    background-color: rgb(48, 48, 48);
-    min-height: 100vh;
-    color: white;
-    padding: 50px;
+  background-color: rgb(48, 48, 48);
+  min-height: 100vh;
+  color: white;
+  padding: 50px;
+  display: flex;
+  .header {
+    width: 33.33%;
+    padding: 0px 20px;
     display: flex;
-    .header {
-        width: 33.33%;
-        padding: 0px 20px;
+    flex-direction: column;
+    align-items: center;
+    .app_name {
+      margin-bottom: 100px;
+      h1 {
+        font-weight: 200;
+        font-size: 50px;
+        color: orangered;
+      }
+    }
+    .balance {
+      text-align: center;
+      margin-bottom: 100px;
+      div {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+    }
+    .income_expenses {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 25px;
+      .header_income {
+        color: rgb(10, 190, 100);
+        div {
+          margin-bottom: 20px;
+        }
+      }
+      .header_expense {
+        color: orangered;
+        div {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .income {
+    width: 33.33%;
+    padding: 0px 40px;
+    .income_form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 50px;
+      input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding: 10px 0px;
+        color: white;
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid rgb(10, 190, 100);
+        }
+      }
+      .btn {
+        button {
+          background-color: rgb(10, 190, 100);
+          padding: 5px 15px;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(9, 167, 88);
+          }
+        }
+      }
+    }
+    .income_history {
+      color: white;
+      h2 {
+        font-weight: 200;
+        margin-bottom: 20px;
+      }
+      .income_item {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        .app_name {
-            margin-bottom: 100px;
-            h1 {
-                font-weight: 200;
-                font-size: 50px;
-                color: orangered;
-            }
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+        .income_info {
+          display: flex;
+          justify-content: space-between;
+          background-color: rgb(10, 190, 100);
+          width: 90%;
+          padding: 5px 10px;
         }
-        .balance {
-            text-align: center;
-            margin-bottom: 100px;
-            div {
-                font-size: 25px;
-                margin-bottom: 20px;
-            }
+        .fas {
+          font-size: 22px;
+          &:hover {
+            color: orangered;
+            cursor: pointer;
+          }
         }
-        .income_expenses {
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            font-size: 25px;
-            .header_income {
-                color: rgb(10, 190, 100);
-                div {
-                    margin-bottom: 20px;
-                }
-            }
-            .header_expense {
-                color: orangered;
-                div {
-                    margin-bottom: 20px;
-                }
-            }
-        }
+      }
     }
-    .income {
-        width: 33.33%;
-        padding: 0px 40px;
-        .income_form {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 50px;
-            input {
-                background-color: transparent;
-                border: none;
-                border-bottom: 2px solid gray;
-                margin-bottom: 20px;
-                font-size: 18px;
-                padding: 10px 0px;
-                color: white;
-                &:focus {
-                    outline: none;
-                    border-bottom: 2px solid rgb(10, 190, 100);
-                }
-            }
-            .btn {
-                button {
-                    background-color: rgb(10, 190, 100);
-                    padding: 5px 15px;
-                    border: none;
-                    border-radius: 5px;
-                    color: white;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: rgb(9, 167, 88);
-                    }
-                }
-            }
+  }
+  .expense {
+    width: 33.33%;
+    padding: 0px 40px;
+    .expense_form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 50px;
+      input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid gray;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding: 10px 0px;
+        color: white;
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid orangered;
         }
-        .income_history {
-            h2 {
-                font-weight: 200;
-            }
+      }
+      .btn {
+        button {
+          background-color: orangered;
+          padding: 5px 15px;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: orangered;
+          }
         }
+      }
     }
-    .expense {
-        width: 33.33%;
-        padding: 0px 40px;
-        .expense_form {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 50px;
-            input {
-                background-color: transparent;
-                border: none;
-                border-bottom: 2px solid gray;
-                margin-bottom: 20px;
-                font-size: 18px;
-                padding: 10px 0px;
-                color: white;
-                &:focus {
-                    outline: none;
-                    border-bottom: 2px solid orangered;
-                }
-            }
-            .btn {
-                button {
-                    background-color: orangered;
-                    padding: 5px 15px;
-                    border: none;
-                    border-radius: 5px;
-                    color: white;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: orangered;
-                    }
-                }
-            }
-        }
-        .expense_history {
-            h2 {
-                font-weight: 200;
-            }
-        }
+    .expense_history {
+      h2 {
+        font-weight: 200;
+      }
     }
+  }
 }

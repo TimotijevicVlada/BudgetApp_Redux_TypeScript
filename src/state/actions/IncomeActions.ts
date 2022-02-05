@@ -7,3 +7,7 @@ export const AddIncome = (income: IncomeProps) => ({
 export const CountIncome = () => ({
     type: "COUNT_TOTAL_INCOME"
 })
+export const DeleteIncome = (income: IncomeProps) => ({
+    type: "DELETE_INCOME",
+    payload: income
+})

@@ -5,8 +5,6 @@ const Header = () => {
 
     const totalIncome = useSelector((state: any) => state.income.totalIncome);
 
-    console.log(totalIncome);
-
     return (
         <header className='header'>
             <div className='app_name'>
